@@ -1,18 +1,33 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+ <main-master-page>
+	<h2 class="title">Вітаємо!</h2>
+	<h3 >Сподівась Ви будете чемними,і обов'язково щось купите</h3>
+	<template #rating>Рейтинг магазину : {{getCorrectRating}}</template>
+	<template #owner><div>Власник Баба Галя</div></template>
+ </main-master-page>
+	
+
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import MainMasterPage from '@/masterpages/MainMasterPage.vue';
+import {mapGetters} from 'vuex';
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+	MainMasterPage,
   },
+  computed: {
+	...mapGetters(['getCorrectRating'])
+  },
+
 };
 </script>
+<style lang="scss" scoped>
+.title{
+	font-size: 35px;
+	color: green;
+}
+</style>
+

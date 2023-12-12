@@ -1,5 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main-master-page>
+	 <h2>Оберіть продукти</h2>
+	 <product-list-view/>
+	</main-master-page>
+   
+  
 </template>
+<script>
+import MainMasterPage from '@/masterpages/MainMasterPage.vue'
+import ProductListView from './ProductListView.vue';
+
+
+export default {
+    name: 'AboutView',
+    components: { MainMasterPage, ProductListView },
+
+}
+</script>
